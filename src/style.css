@@ -55,6 +55,62 @@ body,html{
      background-color: #dce0d9;
      width: 100%;
      height: 85%;
-     padding: 10px;
+     /* padding: 10px; */
+     /* box-sizing: border-box; */
+}
+#sBar{
+     width: 30%;
+     height: 100%;
+     padding: 20px;
      box-sizing: border-box;
+     background-color: #fbf6ef;
+     display: flex;
+     gap: 20px;
+     flex-direction: column;
+}
+#fForm{
+     display:flex;
+     gap: 10px;
+     align-items: center;
+}
+#fName{
+     width: 60%;
+     height: 45px;
+     border-radius: 5px;
+     font-size: larger;
+     font-weight: bold;
+}
+#fSubmit{
+     width: 30%;
+     height: 40px;
+     box-sizing: border-box;
+     padding: 5px;
+     border-radius: 5px;
+     font-size: 100%;
+}
+#fList{
+     display: flex;
+     flex-direction: column;
+     background-color: #dce0d9;
+}
+#folder{
+     height: 50px;
+     font-size: x-large;
+     background-color: #ead7c3;
+     box-sizing: border-box;
+     border-radius: 5px;
+     padding: 5px;
+     border-width: 3px;
+     border-color:  rgba(0, 0, 0, 0.3);
+     border-style: solid;
+}
+#folder:hover{
+     border-color:  rgba(0, 0, 0, 1);
+}
+#footer{
+     height: 5%;
+     box-sizing: border-box;
+     font-family: 'MyFont';
+     font-size: larger;
+     padding: 20px;
 }

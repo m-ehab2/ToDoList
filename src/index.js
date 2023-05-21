@@ -1,9 +1,8 @@
 import _ from 'lodash';
 import './style.css';
-import Icon from './icon.png';
 // import Data from './data.xml';
 // import Notes from './data.csv';
-import Skeleton from './mainBody.js';
-
-
+import Skeleton from './mainBody';
+import submitBtn from './functionality';
 document.body.appendChild(Skeleton());
+submitBtn();
