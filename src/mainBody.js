@@ -35,6 +35,7 @@ export default function Skeleton() {
 	//Folder Creation
 	const fName=document.createElement('input');
 	fName.setAttribute('type','text');
+	fName.setAttribute('maxlength','25');
 	fName.placeholder='Folder Name';
 	fName.id='fName';
 	const btn1=document.createElement('button');
@@ -51,11 +52,34 @@ export default function Skeleton() {
 	const folder=document.createElement('div');
 	folder.id='folder';
 	folder.innerHTML='Temp';
+	const deleteButton=document.createElement('button');
+	deleteButton.innerHTML='x';
+	deleteButton.id='del';
+	folder.appendChild(deleteButton);
 	fList.appendChild(folder);
-
 	sBar.appendChild(fList);
 	kek.appendChild(sBar);
 	main.appendChild(kek);
+	//Creating the todos
+	const toDoList=document.createElement('div');
+	toDoList.id='toDoList';
+	const foldTitle=document.createElement('h3');
+	foldTitle.innerHTML='Temp';
+	foldTitle.id='foldTitle';
+	const toDos=document.createElement('div');
+	toDos.id='toDos';
+	const addToDo=document.createElement('button');
+	addToDo.innerHTML='+';
+	const itemToDo=document.createElement('div');
+	itemToDo.id='toDoItem';
+	const itemName=document.createElement('div');
+	itemName.innerHTML='To Do Item name';
+	itemToDo.appendChild(itemName);
+	toDos.appendChild(addToDo);
+	toDos.appendChild(itemToDo);
+	toDoList.appendChild(foldTitle);
+	toDoList.appendChild(toDos);
+	kek.appendChild(toDoList);
 	//Creating Footer
 	const footer=document.createElement('div');
 	footer.id='footer';

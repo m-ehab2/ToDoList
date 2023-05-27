@@ -57,6 +57,7 @@ body,html{
      height: 85%;
      /* padding: 10px; */
      /* box-sizing: border-box; */
+     display: flex;
 }
 #sBar{
      width: 30%;
@@ -79,19 +80,23 @@ body,html{
      border-radius: 5px;
      font-size: larger;
      font-weight: bold;
+     box-sizing: border-box;
 }
 #fSubmit{
      width: 30%;
-     height: 40px;
+     height: 45px;
      box-sizing: border-box;
      padding: 5px;
      border-radius: 5px;
-     font-size: 100%;
+     /* font-size: 100%; */
+     font-size: 80%;
+     background-color: white;
+     color: black;
 }
 #fList{
      display: flex;
      flex-direction: column;
-     background-color: #dce0d9;
+     gap: 20px;
 }
 #folder{
      height: 50px;
@@ -103,9 +108,60 @@ body,html{
      border-width: 3px;
      border-color:  rgba(0, 0, 0, 0.3);
      border-style: solid;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     word-wrap: normal;
 }
+
 #folder:hover{
      border-color:  rgba(0, 0, 0, 1);
+}
+
+#del{
+     border: 0px;
+     background: rgba(0, 0, 0, 0);
+     border-radius: 5px;
+     padding:5px;
+     width:35px;
+     height:35px;
+     box-sizing: border-box;
+     border-width: 2px;
+     border-color: black;
+     border-style: solid;
+     font-family: 'MyFont';
+     font-size: small;
+}
+#del:hover{
+     border-color: #fbf6ef;
+}
+#toDoList{
+     width: 70%;
+     height: 100%;
+     padding: 20px;
+     box-sizing: border-box;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     flex-direction: column;
+}
+#foldTitle{
+     background-color: #fbf6ef;
+     padding: 10px;
+     box-sizing: border-box;
+     border-radius: 5px;
+}
+#toDos{
+     background-color: #fbf6ef;
+     padding: 10px;
+     box-sizing: border-box;
+     border-radius: 5px;
+     display: flex;
+     flex-direction: column;
+     height: max-content;
+}
+#toDos>button{
+     align-self: center;
 }
 #footer{
      height: 5%;

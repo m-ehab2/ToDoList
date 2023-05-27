@@ -5,4 +5,4 @@ import './style.css';
 import Skeleton from './mainBody';
 import submitBtn from './functionality';
 document.body.appendChild(Skeleton());
-submitBtn();
+console.log(submitBtn());
