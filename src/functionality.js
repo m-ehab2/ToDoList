@@ -1,3 +1,5 @@
+import { addfoldToLibrary,remove } from "./folder";
+let noOfShownFolders=1;
 export default function submitBtn(){
 	const btn=document.getElementById('fSubmit');
 	const inBox=document.getElementById('fName');
@@ -6,17 +8,22 @@ export default function submitBtn(){
 		if(inBox.value){
 			if(fList.childElementCount<10){
 				const fold=document.createElement('div');
-				fold.id='folder';
+				fold.id='folder'+noOfShownFolders;
 				fold.innerHTML=inBox.value;
+				addfoldToLibrary(inBox.value,1);
 				fold.addEventListener('click',function(event){
 					console.log(fold.innerHTML);
 				});
 				const deleteButton=document.createElement('button');
 				deleteButton.innerHTML='x';
-				deleteButton.id='del';
+				deleteButton.id='del'+noOfShownFolders;
 				deleteButton.addEventListener('click',function(event){
 					console.log(fold.innerHTML+'delete');
+					let r=/\d+/;
+					remove(deleteButton.id.match(r)[0]);
+					noOfShownFolders--;
 				});
+				noOfShownFolders++;
 				fold.appendChild(deleteButton);
 				fList.appendChild(fold);
 			}

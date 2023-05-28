@@ -98,7 +98,7 @@ body,html{
      flex-direction: column;
      gap: 20px;
 }
-#folder{
+#fList>div{
      height: 50px;
      font-size: x-large;
      background-color: #ead7c3;
@@ -114,11 +114,11 @@ body,html{
      word-wrap: normal;
 }
 
-#folder:hover{
+#fList>div:hover{
      border-color:  rgba(0, 0, 0, 1);
 }
 
-#del{
+#fList>div button{
      border: 0px;
      background: rgba(0, 0, 0, 0);
      border-radius: 5px;
@@ -132,7 +132,7 @@ body,html{
      font-family: 'MyFont';
      font-size: small;
 }
-#del:hover{
+#fList>div button:hover{
      border-color: #fbf6ef;
 }
 #toDoList{

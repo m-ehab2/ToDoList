@@ -59,7 +59,6 @@ export default function Skeleton() {
 	fList.appendChild(folder);
 	sBar.appendChild(fList);
 	kek.appendChild(sBar);
-	main.appendChild(kek);
 	//Creating the todos
 	const toDoList=document.createElement('div');
 	toDoList.id='toDoList';
@@ -80,6 +79,8 @@ export default function Skeleton() {
 	toDoList.appendChild(foldTitle);
 	toDoList.appendChild(toDos);
 	kek.appendChild(toDoList);
+	
+	main.appendChild(kek);
 	//Creating Footer
 	const footer=document.createElement('div');
 	footer.id='footer';
