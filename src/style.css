@@ -2,7 +2,11 @@
      font-family: 'MyFont';
      src: url(Alef-Regular.ttf);
 }
-
+:root{
+     --10:#1D3557;
+     --30:#457B9D;
+     --60:#F1FAEE;
+}
 body,html{
      margin: 0px;
      box-sizing: border-box;
@@ -10,7 +14,7 @@ body,html{
      width: 100vw;
 }
 #main{
-     background-color: #fbf6ef;
+     background-color: var(--60);
      width: 100%;
      height: 100%;
      display: flex;
@@ -19,7 +23,7 @@ body,html{
 }
 
 #header{
-     background-color: #ead7c3;
+     background-color:var(--60);
      display: flex;
      align-items: center;
      justify-content: space-between;
@@ -38,21 +42,22 @@ body,html{
 }
 #header>button{
      border: 0px;
-     background: rgba(0, 0, 0, 0);
      border-radius: 5px;
      padding:10px;
      box-sizing: border-box;
      border-width: 3px;
-     border-color: black;
+     border-color: var(--30);
      border-style: solid;
      font-family: 'MyFont';
      font-size: x-large;
+     background-color: var(--30);
+     color: white;
 }
 #header>button:hover{
-     border-color: #fbf6ef;
+     border-color: var(--10)
 }
 #interface{
-     background-color: #dce0d9;
+     background-color: var(--60);
      width: 100%;
      height: 85%;
      /* padding: 10px; */
@@ -64,7 +69,7 @@ body,html{
      height: 100%;
      padding: 20px;
      box-sizing: border-box;
-     background-color: #fbf6ef;
+     background-color: var(--60)f;
      display: flex;
      gap: 20px;
      flex-direction: column;
@@ -76,45 +81,70 @@ body,html{
 }
 #fName{
      width: 60%;
-     height: 45px;
+     height: 50px;
      border-radius: 5px;
      font-size: larger;
+     border-style: solid;
      font-weight: bold;
      box-sizing: border-box;
+     background-color: var(--60);
+     border-color: var(--10);
+     border-width: 2px;
+}
+#fName:focus{
+     border-radius: 5px;
+     font-size: larger;
+     border-style: solid;
+     font-weight: bold;
+     box-sizing: border-box;
+     background-color: var(--60);
+     border-color: var(--10);
+     border-width: 2px;
 }
 #fSubmit{
-     width: 30%;
-     height: 45px;
+     width: 33%;
+     height: 50px;
      box-sizing: border-box;
-     padding: 5px;
+     padding: 3px;
      border-radius: 5px;
+     border-color: var(--30);
      /* font-size: 100%; */
-     font-size: 80%;
-     background-color: white;
-     color: black;
+     font-size: 90%;
+     background-color: var(--30);
+     color: white;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     border-width: 3px;
+     border-color: var(--30);
+     border-style: solid;
+     font-family: 'MyFont';
+}
+#fSubmit:hover{
+     border-color: var(--10)
 }
 #fList{
      display: flex;
      flex-direction: column;
      gap: 20px;
 }
-#fList>div{
+#flist>div{
+     display: flex;
+     background-color: #1D3557;
+}
+#fList>div>div{
      height: 50px;
      font-size: x-large;
-     background-color: #ead7c3;
+     background-color:var(--30);
      box-sizing: border-box;
+     color: white;
      border-radius: 5px;
      padding: 5px;
-     border-width: 3px;
-     border-color:  rgba(0, 0, 0, 0.3);
+     border-width: 5px;
      border-style: solid;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
      word-wrap: normal;
+     border-color: var(--30);
 }
 
-#fList>div:hover{
+#fList>div>div:hover{
      border-color:  rgba(0, 0, 0, 1);
 }
 
@@ -127,13 +157,13 @@ body,html{
      height:35px;
      box-sizing: border-box;
      border-width: 2px;
-     border-color: black;
+     border-color: var(--60);
      border-style: solid;
      font-family: 'MyFont';
      font-size: small;
 }
 #fList>div button:hover{
-     border-color: #fbf6ef;
+     border-color: var(--10);
 }
 #toDoList{
      width: 70%;
@@ -144,15 +174,17 @@ body,html{
      flex-direction: column;
      gap: 20px;
      flex-direction: column;
+     background-color: var(--30);
+     border-radius: 10px;
 }
 #foldTitle{
-     background-color: #fbf6ef;
+     background-color: var(--30);
      padding: 10px;
      box-sizing: border-box;
      border-radius: 5px;
 }
 #toDos{
-     background-color: #fbf6ef;
+     background-color: var(--30);
      padding: 10px;
      box-sizing: border-box;
      border-radius: 5px;

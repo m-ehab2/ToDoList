@@ -51,10 +51,12 @@ export default function Skeleton() {
 	fList.id='fList';
 	const folder=document.createElement('div');
 	folder.id='folder';
-	folder.innerHTML='Temp';
+	const fNameF=document.createElement('div');
+	fNameF.innerHTML='Temp'
 	const deleteButton=document.createElement('button');
 	deleteButton.innerHTML='x';
 	deleteButton.id='del';
+	folder.appendChild(fNameF);
 	folder.appendChild(deleteButton);
 	fList.appendChild(folder);
 	sBar.appendChild(fList);
