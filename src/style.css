@@ -126,27 +126,19 @@ body,html{
      flex-direction: column;
      gap: 20px;
 }
-#flist>div{
+#fList>div{
      display: flex;
-     background-color: #1D3557;
-}
-#fList>div>div{
-     height: 50px;
-     font-size: x-large;
-     background-color:var(--30);
+     background-color: var(--30);
+     align-items: center;
+     justify-content: space-between;
+     padding: 10px;
      box-sizing: border-box;
-     color: white;
      border-radius: 5px;
-     padding: 5px;
-     border-width: 5px;
-     border-style: solid;
-     word-wrap: normal;
-     border-color: var(--30);
+     color: var(--60);
+     font-family: cursive;
+     width: 100%;
 }
 
-#fList>div>div:hover{
-     border-color:  rgba(0, 0, 0, 1);
-}
 
 #fList>div button{
      border: 0px;
@@ -164,9 +156,11 @@ body,html{
 }
 #fList>div button:hover{
      border-color: var(--10);
+     background-color: var(--10);
+     color: white;
 }
 #toDoList{
-     width: 70%;
+     width: 68.5%;
      height: 100%;
      padding: 20px;
      box-sizing: border-box;

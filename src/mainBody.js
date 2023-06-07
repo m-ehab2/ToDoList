@@ -36,7 +36,7 @@ export default function Skeleton() {
 	const fName=document.createElement('input');
 	fName.setAttribute('type','text');
 	fName.setAttribute('maxlength','25');
-	fName.placeholder='Folder Name';
+	fName.placeholder='Project Name';
 	fName.id='fName';
 	const btn1=document.createElement('button');
 	btn1.id='fSubmit';
@@ -49,22 +49,12 @@ export default function Skeleton() {
 	//Folder List
 	const fList=document.createElement('div');
 	fList.id='fList';
-	const folder=document.createElement('div');
-	folder.id='folder';
-	const fNameF=document.createElement('div');
-	fNameF.innerHTML='Temp'
-	const deleteButton=document.createElement('button');
-	deleteButton.innerHTML='x';
-	deleteButton.id='del';
-	folder.appendChild(fNameF);
-	folder.appendChild(deleteButton);
-	fList.appendChild(folder);
 	sBar.appendChild(fList);
 	kek.appendChild(sBar);
 	//Creating the todos
 	const toDoList=document.createElement('div');
 	toDoList.id='toDoList';
-	const foldTitle=document.createElement('h3');
+	const foldTitle=document.createElement('div');
 	foldTitle.innerHTML='Temp';
 	foldTitle.id='foldTitle';
 	const toDos=document.createElement('div');
