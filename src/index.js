@@ -4,5 +4,7 @@ import './style.css';
 // import Notes from './data.csv';
 import Skeleton from './mainBody';
 import submitBtn from './functionality';
+import { attachPopUp } from './popup';
+attachPopUp();
 document.body.appendChild(Skeleton());
 console.log(submitBtn());

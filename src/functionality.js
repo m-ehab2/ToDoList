@@ -1,37 +1,45 @@
-import { addfoldToLibrary,remove } from "./folder";
+import { addfoldToLibrary,remove,setActive,selectFolder } from "./folder";
 let noOfShownFolders=0;
 export default function submitBtn(){
 	const btn=document.getElementById('fSubmit');
 	const inBox=document.getElementById('fName');
 	const fList=document.getElementById('fList');
 	btn.onclick=function(){
-		const folderContainer=document.createElement('div');
 		if(inBox.value){
 			if(fList.childElementCount<9){
+				const folderContainer=document.createElement('div');
 				const fold=document.createElement('div');
-				fold.id='folder'+noOfShownFolders;
+				folderContainer.id=noOfShownFolders;
 				fold.innerHTML=inBox.value;
 				addfoldToLibrary(inBox.value,noOfShownFolders);
 				folderContainer.addEventListener('click',function(event){
-					console.log(fold.innerHTML);
+					document.getElementById('foldTitle').style.display='block';
+					document.getElementById('addToDo').style.display='block';
+					let r=/\d+/;
+					let z=this.id.match(r)[0];
+					setActive(Number(z));
+					selectFolder()
 					event.stopPropagation();
 				});
 				const deleteButton=document.createElement('button');
 				deleteButton.innerHTML='x';
-				deleteButton.id='del'+noOfShownFolders;
+				deleteButton.id=noOfShownFolders;
 				deleteButton.addEventListener('click',function(event){
 					console.log('delete');
 					let r=/\d+/;
-					remove(deleteButton.id.match(r)[0]);
-					noOfShownFolders--;
-					console.log(noOfShownFolders);
+					let z=this.id.match(r)[0];
+					remove(Number(z));
+					selectFolder();
+					this.parentElement.remove();
 					event.stopPropagation();
+					noOfShownFolders--;
 				});
-				noOfShownFolders++;
 				folderContainer.appendChild(fold);
 				folderContainer.appendChild(deleteButton);
 				fList.appendChild(folderContainer);
+				console.log(noOfShownFolders)
 			}
+			noOfShownFolders++;
 			return inBox.value;
 		}
 	};

@@ -55,16 +55,20 @@ export default function Skeleton() {
 	const toDoList=document.createElement('div');
 	toDoList.id='toDoList';
 	const foldTitle=document.createElement('div');
-	foldTitle.innerHTML='Temp';
 	foldTitle.id='foldTitle';
+	foldTitle.style.display='none';
 	const toDos=document.createElement('div');
 	toDos.id='toDos';
 	const addToDo=document.createElement('button');
-	addToDo.innerHTML='+';
+	addToDo.innerHTML=' + ';
+	addToDo.id='addToDo';
+	addToDo.addEventListener('click',function(){
+		console.log('popup');
+	})
+	addToDo.style.display='none';
 	const itemToDo=document.createElement('div');
 	itemToDo.id='toDoItem';
 	const itemName=document.createElement('div');
-	itemName.innerHTML='To Do Item name';
 	itemToDo.appendChild(itemName);
 	toDos.appendChild(addToDo);
 	toDos.appendChild(itemToDo);
