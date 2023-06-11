@@ -1,3 +1,4 @@
+import { openPopUp } from "./popup";
 export default function Skeleton() {
 	const main = document.createElement('div');
 	main.id='main';
@@ -64,6 +65,7 @@ export default function Skeleton() {
 	addToDo.id='addToDo';
 	addToDo.addEventListener('click',function(){
 		console.log('popup');
+		openPopUp();
 	})
 	addToDo.style.display='none';
 	const itemToDo=document.createElement('div');

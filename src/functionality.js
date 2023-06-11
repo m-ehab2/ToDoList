@@ -1,4 +1,4 @@
-import { addfoldToLibrary,remove,setActive,selectFolder } from "./folder";
+import { addfoldToLibrary,getFold,remove,setActive,selectFolder, myLibrary } from "./folder";
 let noOfShownFolders=0;
 export default function submitBtn(){
 	const btn=document.getElementById('fSubmit');
@@ -25,11 +25,16 @@ export default function submitBtn(){
 				deleteButton.innerHTML='x';
 				deleteButton.id=noOfShownFolders;
 				deleteButton.addEventListener('click',function(event){
+
 					console.log('delete');
 					let r=/\d+/;
 					let z=this.id.match(r)[0];
+					if(getFold(Number(z)).active){
+						document.getElementById('foldTitle').innerHTML='';
+						document.getElementById('foldTitle').style.display='none';
+						document.getElementById('addToDo').style.display='none';
+					}
 					remove(Number(z));
-					selectFolder();
 					this.parentElement.remove();
 					event.stopPropagation();
 					noOfShownFolders--;

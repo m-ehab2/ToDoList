@@ -48,4 +48,14 @@ function selectFolder(){
 	const title=document.getElementById('foldTitle');
 	title.innerHTML=z.title;
 }
-export{myLibrary,addfoldToLibrary,remove,setActive,findActive,selectFolder};
+function getFold(n){
+	let z=0;
+	for (let index = 0; index < myLibrary.length; index++) {
+		if(myLibrary[index].order===n){
+			z=index;
+			return myLibrary[z];
+		}
+	}
+}
+
+export{myLibrary,getFold,addfoldToLibrary,remove,setActive,findActive,selectFolder};
