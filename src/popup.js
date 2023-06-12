@@ -1,3 +1,4 @@
+import { addToDo,selectFolder } from "./folder";
 const popup = document.createElement("div");
 popup.id = "popUp";
 const form = document.createElement("form");
@@ -70,7 +71,11 @@ form.addEventListener('submit',(e)=>{
   const myFormData=new FormData(form);
   const formDataObj = {};
   myFormData.forEach((value, key) => (formDataObj[key] = value));
+  addToDo(formDataObj);
+  console.log(selectFolder());
   console.log(formDataObj);
+  console.log(formDataObj.date);
+  popup.style.display='none';
 })
 popup.appendChild(form);
 document.body.appendChild(popup);

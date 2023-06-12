@@ -4,13 +4,18 @@ function fold(title,order) {
 	this.title=title;
 	this.order=order;
 	this.active=false;
+	this.myToDos=[];
+}
+function toDo(title,description,date,priority){
+	this.title=title;
+	this.description=description;
+	this.date=date;
+	this.priority=priority;
 }
 
 function addfoldToLibrary(title,order) {
 	let x= new fold(title,order);
 	myLibrary.push(x);
-	console.log(x.order);
-	console.log(myLibrary);
 }
 function remove(n){
 	let z=0;
@@ -28,7 +33,6 @@ function setActive(n){
 		myLibrary[index].active=false;
 		if(myLibrary[index].order===n){
 			myLibrary[index].active=true;
-			console.log('activated');
 		}
 	}
 	console.log(myLibrary);
@@ -38,7 +42,7 @@ function findActive(){
 	for (let index = 0; index < myLibrary.length; index++) {
 		if(myLibrary[index].active){
 			z=index;
-			return myLibrary[index];
+			return z;
 		}
 		
 	}
@@ -46,7 +50,11 @@ function findActive(){
 function selectFolder(){
 	let z=findActive();
 	const title=document.getElementById('foldTitle');
-	title.innerHTML=z.title;
+	title.innerHTML=myLibrary[z].title;
+	if(myLibrary[z].myToDos.length>0){
+
+	}
+	return myLibrary[z];
 }
 function getFold(n){
 	let z=0;
@@ -57,5 +65,18 @@ function getFold(n){
 		}
 	}
 }
+function addToDo(obj){
+	let z=findActive();
+	myLibrary[z].myToDos.push(obj);
 
-export{myLibrary,getFold,addfoldToLibrary,remove,setActive,findActive,selectFolder};
+}
+function printToDos(){
+	let todo=document.createElement('div');
+	if(selectFolder().myToDos.length>0){
+		selectFolder().myToDos.forEach(element => {
+			let date=element.date;
+		});
+	}
+}
+
+export{myLibrary,addToDo,getFold,addfoldToLibrary,remove,setActive,findActive,selectFolder};
