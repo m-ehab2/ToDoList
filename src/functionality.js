@@ -1,4 +1,4 @@
-import { addfoldToLibrary,getFold,remove,setActive,selectFolder, myLibrary } from "./folder";
+import { addfoldToLibrary,getFold,remove,setActive,selectFolder, myLibrary, arrayCreated } from "./folder";
 let noOfShownFolders=0;
 export default function submitBtn(){
 	const btn=document.getElementById('fSubmit');
@@ -15,6 +15,9 @@ export default function submitBtn(){
 				folderContainer.addEventListener('click',function(event){
 					document.getElementById('foldTitle').style.display='block';
 					document.getElementById('addToDo').style.display='block';
+					if(arrayCreated()){
+					document.getElementById('toDoItems').style.display='block';
+					}
 					let r=/\d+/;
 					let z=this.id.match(r)[0];
 					setActive(Number(z));

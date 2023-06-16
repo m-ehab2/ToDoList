@@ -1,4 +1,4 @@
-import { addToDo,selectFolder } from "./folder";
+import { addToDo,arrayCreated,selectFolder,printToDos } from "./folder";
 const popup = document.createElement("div");
 popup.id = "popUp";
 const form = document.createElement("form");
@@ -22,6 +22,7 @@ let i=document.createElement('input');
 i.type='text';
 i.name='title';
 i.placeholder='Brush My teeth,Finish my homework,etc';
+i.setAttribute('requried','');
 form.appendChild(i);
 x=document.createElement('label');
 x.for='description';
@@ -47,15 +48,15 @@ form.appendChild(x);
 i=document.createElement('select');
 i.name='prio';
 let o=document.createElement('option');
-o.value='0';
+o.value='Low';
 o.innerHTML='Low';
 i.appendChild(o);
 o=document.createElement('option');
-o.value='1';
+o.value='Regular';
 o.innerHTML='Regular';
 i.appendChild(o);
 o=document.createElement('option');
-o.value='2';
+o.value='High';
 o.innerHTML='High';
 i.appendChild(o);
 form.appendChild(i);
@@ -71,11 +72,20 @@ form.addEventListener('submit',(e)=>{
   const myFormData=new FormData(form);
   const formDataObj = {};
   myFormData.forEach((value, key) => (formDataObj[key] = value));
+  if(formDataObj.title===''||formDataObj.description===''){
+    alert('Please enter a valid title and discirptioon');
+  }
+  else if(formDataObj.date===''){
+    alert('please enter a due date');
+  }
+  else{
   addToDo(formDataObj);
-  console.log(selectFolder());
+  if(arrayCreated()){
+    document.getElementById('toDoItems').style.display='block';
+  }
   console.log(formDataObj);
-  console.log(formDataObj.date);
   popup.style.display='none';
+  printToDos();}
 })
 popup.appendChild(form);
 document.body.appendChild(popup);

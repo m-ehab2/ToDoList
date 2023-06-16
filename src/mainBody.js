@@ -69,7 +69,8 @@ export default function Skeleton() {
 	})
 	addToDo.style.display='none';
 	const itemToDo=document.createElement('div');
-	itemToDo.id='toDoItem';
+	itemToDo.id='toDoItems';
+	itemToDo.style.display='none';
 	const itemName=document.createElement('div');
 	itemToDo.appendChild(itemName);
 	toDos.appendChild(addToDo);

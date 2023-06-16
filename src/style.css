@@ -278,7 +278,19 @@ font-size: 25px;
      border-image: none;
      font-size: large;
 }
-
+#toDoItems{
+     background-color: var(--60);
+     border-radius: 5px;
+     padding: 2px;
+     box-sizing: border-box;
+}
+#toDoItems>div{
+     background-color: var(--10);
+     color: var(--60);
+     font-family: 'Roboto';
+     display: flex;
+     gap: 3px;
+}
 #footer{
      height: 5%;
      box-sizing: border-box;
