@@ -15,7 +15,7 @@ export default function Skeleton() {
 	wWord.innerHTML='Welcome Back, ';
 	const uName=document.createElement('p');
 	uName.id='uName';
-	uName.innerHTML='*User_Name*';
+	uName.innerHTML='Mo';
 	wSentence.appendChild(wWord);
 	wSentence.appendChild(uName);
 	header.appendChild(wSentence);
@@ -38,7 +38,7 @@ export default function Skeleton() {
 	fName.setAttribute('type','text');
 	fName.setAttribute('maxlength','25');
 	fName.placeholder='Project Name';
-	fName.id='fName';
+	fName.id='fName';1
 	const btn1=document.createElement('button');
 	btn1.id='fSubmit';
 	btn1.innerHTML='Create New';
@@ -71,14 +71,11 @@ export default function Skeleton() {
 	const itemToDo=document.createElement('div');
 	itemToDo.id='toDoItems';
 	itemToDo.style.display='none';
-	const itemName=document.createElement('div');
-	itemToDo.appendChild(itemName);
 	toDos.appendChild(addToDo);
 	toDos.appendChild(itemToDo);
 	toDoList.appendChild(foldTitle);
 	toDoList.appendChild(toDos);
 	kek.appendChild(toDoList);
-	
 	main.appendChild(kek);
 	//Creating Footer
 	const footer=document.createElement('div');

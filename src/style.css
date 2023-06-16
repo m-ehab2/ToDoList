@@ -225,6 +225,7 @@ body,html{
 }
 #toDos>button{
      align-self: center;
+     margin-bottom: 10px;
 }
 #popUp{
      display: none;
@@ -259,6 +260,8 @@ body,html{
      top: 1%;
      left: 90%;
      background-color: #457B9D;
+     border-radius: 3px;
+     line-height: 14px;
 }
 #form>label{
 color: var(--10);
@@ -283,6 +286,10 @@ font-size: 25px;
      border-radius: 5px;
      padding: 2px;
      box-sizing: border-box;
+     display: flex;
+     flex-direction: column;
+     gap: 40px;
+     background-color: var(--60);
 }
 #toDoItems>div{
      background-color: var(--10);
@@ -290,6 +297,46 @@ font-size: 25px;
      font-family: 'Roboto';
      display: flex;
      gap: 3px;
+     align-items: center;
+     width: 100%;
+     padding: 10px;
+     box-sizing: border-box;
+     border-radius: 5px;
+     border-width: 2px;
+     border-color: var(--60);
+     border-style: solid;
+}
+#toDoItems>div button{
+justify-self: flex-end;
+border-radius: 5px;
+padding: 1px;
+box-sizing: border-box;
+width: 30px;
+height: 30px;
+border-width: 2px;
+background-color: var(--10);
+color: var(--60);
+font-style: bold;
+border-style: solid;
+border-color: var(--60);
+}
+#toDoItems>div button:hover{
+border-color: var(--10);
+background-color: var(--30);
+}
+
+#toDoItems>div div{
+     width: 30%;
+     word-wrap: break-word;
+}
+#toDoItems>div h4{
+     width: 19%;
+}
+#date{
+     
+}
+#prio{
+     font-size: medium;
 }
 #footer{
      height: 5%;

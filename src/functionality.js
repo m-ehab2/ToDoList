@@ -1,4 +1,5 @@
-import { addfoldToLibrary,getFold,remove,setActive,selectFolder, myLibrary, arrayCreated } from "./folder";
+import { addfoldToLibrary,getFold,remove,setActive,selectFolder, myLibrary, arrayCreated, printToDos } from "./folder";
+import { store } from "./storage";
 let noOfShownFolders=0;
 export default function submitBtn(){
 	const btn=document.getElementById('fSubmit');
@@ -15,13 +16,17 @@ export default function submitBtn(){
 				folderContainer.addEventListener('click',function(event){
 					document.getElementById('foldTitle').style.display='block';
 					document.getElementById('addToDo').style.display='block';
-					if(arrayCreated()){
-					document.getElementById('toDoItems').style.display='block';
-					}
 					let r=/\d+/;
 					let z=this.id.match(r)[0];
 					setActive(Number(z));
-					selectFolder()
+					selectFolder();
+					if(arrayCreated()){
+						document.getElementById('toDoItems').style.display='block';
+					}
+					else{
+
+					}
+					store();
 					event.stopPropagation();
 				});
 				const deleteButton=document.createElement('button');
@@ -36,6 +41,7 @@ export default function submitBtn(){
 						document.getElementById('foldTitle').innerHTML='';
 						document.getElementById('foldTitle').style.display='none';
 						document.getElementById('addToDo').style.display='none';
+						document.getElementById('toDoItems').style.display='none';
 					}
 					remove(Number(z));
 					this.parentElement.remove();
