@@ -1,5 +1,4 @@
 import { addfoldToLibrary,getFold,remove,setActive,selectFolder, myLibrary, arrayCreated, printToDos } from "./folder";
-import { store } from "./storage";
 let noOfShownFolders=0;
 export default function submitBtn(){
 	const btn=document.getElementById('fSubmit');
@@ -26,7 +25,6 @@ export default function submitBtn(){
 					else{
 
 					}
-					store();
 					event.stopPropagation();
 				});
 				const deleteButton=document.createElement('button');

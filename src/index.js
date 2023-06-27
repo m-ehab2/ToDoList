@@ -4,5 +4,7 @@ import './style.css';
 // import Notes from './data.csv';
 import Skeleton from './mainBody';
 import submitBtn from './functionality';
+import { retrieve } from './folder';
 document.body.appendChild(Skeleton());
 console.log(submitBtn());
+retrieve();

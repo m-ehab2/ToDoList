@@ -321,8 +321,8 @@ border-style: solid;
 border-color: var(--60);
 }
 #toDoItems>div button:hover{
-border-color: var(--10);
-background-color: var(--30);
+     border-color: var(--10);
+     background-color: var(--30);
 }
 
 #toDoItems>div div{

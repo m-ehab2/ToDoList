@@ -1,5 +1,4 @@
 let myLibrary = [];
-import { store } from "./storage";
 function fold(title, order) {
   this.title = title;
   this.order = order;
@@ -13,10 +12,11 @@ function toDo(title, description, date, priority) {
   this.priority = priority;
 }
 function getLib(){
-	return myLibrary;
+  let x=myLibrary;
+	return x;
 }
 function setLib(x){
-	console.log(x);
+	myLibrary=x;
 }
 function addfoldToLibrary(title, order) {
   let x = new fold(title, order);
@@ -40,7 +40,6 @@ function setActive(n) {
       myLibrary[index].active = true;
     }
   }
-  store();
 }
 function findActive() {
   let z = 0;
@@ -55,8 +54,8 @@ function selectFolder() {
   let z = findActive();
   const title = document.getElementById("foldTitle");
   title.innerHTML = myLibrary[z].title;
-  console.log(myLibrary[z]);
   printToDos();
+  store();
   return myLibrary[z];
 }
 function getFold(n) {
@@ -131,6 +130,28 @@ function printToDos() {
   else{
 	document.getElementById("toDoItems").style.display='none';
   }
+  store();
+}
+function store(){
+  let s=getLib();
+  let j=JSON.stringify(s);
+  console.log(j);
+  localStorage.setItem('mylib',j);
 }
 
-export {  myLibrary,setLib ,getLib, arrayCreated,  addToDo,  printToDos,  getFold,addfoldToLibrary, remove,  setActive, findActive, selectFolder};
+function retrieve(){
+  if(localStorage.getItem('mylib')){
+  let m=localStorage.getItem('mylib');
+  m=JSON.parse(m);
+  console.log(m);
+  setLib(m);
+  console.log(myLibrary);
+  }
+}
+function refreshFolderList(){
+    if(myLibrary){
+      const fList=document.getElementById('fList');
+      
+    }
+}
+export { retrieve, myLibrary,setLib ,getLib, arrayCreated,  addToDo,  printToDos,  getFold,addfoldToLibrary, remove,  setActive, findActive, selectFolder};
